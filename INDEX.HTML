@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Effect</title>
+</head>
+<style>
+    *{
+        background-color: black;
+    }
+    p{
+        font-size: 25px;
+        overflow: hidden;
+        position:absolute;
+        color:white;
+    }
+    p::after{
+        content:'developer';
+        display:inline-block;
+        animation: animation 8.5s steps(6) infinite ;
+        width: 0ch;
+        color: lightblue;
+    }
+    p::before{
+        display: inline-flex;
+        content:'';
+        width: 2px;
+        height: 100%;
+        background-color: white;
+        position:absolute;
+        
+        right: 0;
+        animation: blinking 5.4s linear alternate infinite;
+    }
+    @keyframes animation{
+        25%{
+            content: 'developer';
+            width: 8ch;
+
+        }
+        40%{
+            width: 0ch;
+            /* content: ""; */
+        }
+        75%{
+            content: 'designer';
+            width: 7.5ch;
+        }
+        100%{
+            width: 0ch;
+        }
+    }
+    @keyframes blinking{
+        100%{
+            opacity: 0;
+        }
+    }
+</style>
+<body>
+    <p>I'm a web </p>
+</body>
+</html>
